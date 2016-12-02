@@ -35,7 +35,7 @@ def Process_SubPage(save_path, img_url):
 			image = download_single_image(a_img.attrs['src'])
 			time.sleep(0.3)#停止
 
-			if image and len(image.content)>20000:  # 如果不是为空，则说明下载到了,另外图片如果太小，说明图片数据错误（全黑的），一般都是网站上这个图确实没数据
+			if image and len(image.content)>40000:  # 如果不是为空，则说明下载到了,另外图片如果太小，说明图片数据错误（全黑的），一般都是网站上这个图确实没数据
 				os.chdir(save_path)
 				f = open(str(img_ind) + '.jpg', 'ab')
 				print('下载得到图片！保存图片'+str(img_ind)+'大小为'+str(len(image.content)))
